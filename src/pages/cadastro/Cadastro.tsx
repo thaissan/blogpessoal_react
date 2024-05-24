@@ -1,17 +1,22 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react'
 import './Cadastro.css'
 import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service';
 import { useNavigate } from 'react-router-dom';
+import { RotatingLines } from 'react-loader-spinner';
 
 function Cadastro() {
 
     const navigate = useNavigate();
 
+  
+    const [isLoading, setIsLoading] = useState<boolean>(false)
+
     const [confirmaSenha, setConfirmaSenha] = useState<string>('');
 
-    //Estado responsavel pelos sados do usuario que ta cadastrado
+    //Estado responsavel pelos dados do usuario que ta cadastrado
     const [usuario, setUsuario] = useState<Usuario>({
         id: 0,
         nome: '',
@@ -47,6 +52,7 @@ function Cadastro() {
             e.preventDefault();
 
             if(confirmaSenha === usuario.senha && usuario.senha.length >= 8){
+              setIsLoading(true)
                 try {
                     await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
                     alert('Usuário cadastrado com sucesso!')
@@ -60,6 +66,8 @@ function Cadastro() {
                     setUsuario({...usuario,senha: ''});
                     setConfirmaSenha('')
             }
+
+            setIsLoading(false)
           
         }
     
@@ -73,14 +81,14 @@ function Cadastro() {
             onSubmit={cadastrarNovoUsuario} >
           <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
           <div className="flex flex-col w-full">
-            <label htmlFor="usuario">Nome</label>
+            <label htmlFor="nome">Nome</label>
             <input
               type="text"
               id="nome"
               name="nome"
               placeholder="Nome"
-              value={usuario.nome}
               className="border-2 border-slate-700 rounded p-2"
+              value={usuario.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
              
             />
@@ -92,8 +100,8 @@ function Cadastro() {
               id="usuario"
               name="usuario"
               placeholder="Usuario"
-              value={usuario.usuario}
               className="border-2 border-slate-700 rounded p-2"
+              value={usuario.usuario}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
@@ -104,8 +112,8 @@ function Cadastro() {
               id="foto"
               name="foto"
               placeholder="Foto"
-              value={usuario.foto}
               className="border-2 border-slate-700 rounded p-2"
+              value={usuario.foto}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             />
           </div>
@@ -139,8 +147,16 @@ function Cadastro() {
             >
               Cancelar
             </button>
-            <button className='rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2' type='submit'>
-              Cadastrar
+            <button className='rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2 flex justify-center'  type='submit'>
+            {isLoading ? <RotatingLines
+                strokeColor="white"
+                strokeWidth="5"
+                animationDuration="0.75"
+                width="24"
+                visible={true}
+              /> :
+                <span>Cadastrar</span>
+            }
             </button>
           </div>
         </form>

@@ -11,7 +11,7 @@ function Navbar() {
   function logout(){
     handleLogout()
     alert('O usuário foi desconectado com sucesso')
-    navigate('/login')
+    navigate('/')
   }
  
   
@@ -22,11 +22,11 @@ function Navbar() {
           <div className="container flex justify-between text-lg">
             <Link to="/" className='text-2xl font-bold uppercase'>Blog Pessoal</Link>
             <div className='flex gap-4'>
-              <div className='hover:underline'>Postagens</div>
-              <div className='hover:underline'>Temas</div>
-              <div className='hover:underline'>Cadastrar tema</div>
-              <div className='hover:underline'>Perfil</div>
-              <Link to="" onClick={logout}><div className='hover:underline'>Sair</div></Link>
+              Postagens
+              <Link to='/temas' className='hover:underline'>Temas</Link>
+              <Link to='/cadastrartema' className='hover:underline'>Cadastrar tema</Link>
+              Perfil
+              <Link to="" onClick={logout} className='hover:underline'>Sair</Link>
             </div>
           </div>
         </div>

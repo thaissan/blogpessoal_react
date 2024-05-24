@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import UsuarioLogin from '../../models/UsuarioLogin';
@@ -33,8 +33,6 @@ function Login() {
         e.preventDefault();
         handleLogin(usuarioLogin)
     }
-
-    console.log(JSON.stringify(usuarioLogin))
 
     return (
         <>
@@ -91,7 +89,9 @@ function Login() {
 
                     <p>
                         Ainda não tem uma conta?{' '}
-                        Cadastre-se
+                        <Link to='/cadastro' className="text-indigo-800 hover:underline">
+                            Cadastre-se
+                        </Link>
                     </p>
                 </form>
                 <div className="fundoLogin hidden lg:block"></div>
