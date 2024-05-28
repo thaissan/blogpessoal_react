@@ -22,11 +22,11 @@ function Navbar() {
           <div className="container flex justify-between text-lg">
             <Link to="/" className='text-2xl font-bold uppercase'>Blog Pessoal</Link>
             <div className='flex gap-4'>
-              Postagens
-              <Link to='/temas' className='hover:underline'>Temas</Link>
-              <Link to='/cadastrartema' className='hover:underline'>Cadastrar tema</Link>
-              Perfil
-              <Link to="" onClick={logout} className='hover:underline'>Sair</Link>
+            <Link to='/postagens' className='hover:underline'>Postagens</Link>
+            <Link to='/temas' className='hover:underline'>Temas</Link>
+            <Link to='/cadastrartema' className='hover:underline'>Cadastrar tema</Link>
+            Perfil
+            <Link to="" onClick={logout} className='hover:underline'>Sair</Link>
             </div>
           </div>
         </div>
