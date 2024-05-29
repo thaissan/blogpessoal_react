@@ -4,7 +4,8 @@ import 'reactjs-popup/dist/index.css';
 import Popup from 'reactjs-popup';
 
 import './ModalPostagem.css'
-import FormularioPostagem from '../formularioPostagens/FormularioPostagem';
+import FormPostagem from '../formPostagens/FormPostagem';
+
 
 function ModalPostagem() {
   return (
@@ -12,7 +13,7 @@ function ModalPostagem() {
       <Popup 
       trigger={<button className='border rounded px-4 hover:bg-white hover:text-indigo-800'>Nova postagem</button>} modal>
         <div>
-          <FormularioPostagem />
+          <FormPostagem />
         </div>
       </Popup>
     </>

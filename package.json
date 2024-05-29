@@ -19,6 +19,7 @@
     "react-loader": "^2.4.7",
     "react-loader-spinner": "^6.1.6",
     "react-router-dom": "^6.23.1",
+    "react-toastify": "^10.0.5",
     "reactjs-popup": "^2.0.6",
     "spinner": "^0.3.4"
   },
