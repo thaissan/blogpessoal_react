@@ -15,7 +15,7 @@ function Home() {
           </div>
           <div className="max-w-7xl flex flex-col items-center">
             <img
-              src="https://imgur.com/TuVwRkX.png"
+              src="https://imgur.com/gFGoIqo.png"
               alt="Imagem da pagina Home"
               className="w-2/3"
             />

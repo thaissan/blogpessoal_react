@@ -4,7 +4,7 @@ import './Login.css';
 import { ChangeEvent, useContext, useEffect, useState } from 'react';
 import UsuarioLogin from '../../models/UsuarioLogin';
 import { AuthContext } from '../../contexts/AuthContext';
-import { RotatingLines } from 'react-loader-spinner';
+import { ColorRing } from 'react-loader-spinner';
 
 function Login() {
 
@@ -72,12 +72,14 @@ function Login() {
 
                         {isLoading ?
 
-                            <RotatingLines
-                                strokeColor='white'
-                                strokeWidth="5"
-                                animationDuration="0.75"
-                                width="24"
-                                visible={true}
+                            <ColorRing
+                            visible={true}
+                            height="50"
+                            width="50"
+                            ariaLabel="color-ring-loading"
+                            wrapperStyle={{}}
+                            wrapperClass="color-ring-wrapper mx-auto "
+                            colors={['#f20089', '#e500a4', '#db00b6', '#d100d1', '#bc00dd']}
                             />
                             :
                             <span>Entrar</span>

@@ -5,7 +5,7 @@ import './Cadastro.css'
 import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service';
 import { useNavigate } from 'react-router-dom';
-import { RotatingLines } from 'react-loader-spinner';
+import { ColorRing } from 'react-loader-spinner';
 import { ToastAlerta } from '../../utils/ToastAlerta';
 
 function Cadastro() {
@@ -149,12 +149,14 @@ function Cadastro() {
               Cancelar
             </button>
             <button className='rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2 flex justify-center'  type='submit'>
-            {isLoading ? <RotatingLines
-                strokeColor="white"
-                strokeWidth="5"
-                animationDuration="0.75"
-                width="24"
-                visible={true}
+            {isLoading ? <ColorRing
+                            visible={true}
+                            height="80"
+                            width="80"
+                            ariaLabel="color-ring-loading"
+                            wrapperStyle={{}}
+                            wrapperClass="color-ring-wrapper mx-auto"
+                            colors={['#f20089', '#e500a4', '#db00b6', '#d100d1', '#bc00dd']}
               /> :
                 <span>Cadastrar</span>
             }

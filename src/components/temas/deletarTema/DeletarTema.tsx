@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Tema from "../../../models/Tema";
 import { buscar, deletar } from "../../../services/Service";
-import { RotatingLines } from "react-loader-spinner";
+import { ColorRing } from "react-loader-spinner";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function DeletarTema() {
@@ -94,12 +94,15 @@ function DeletarTema() {
                                    hover:bg-indigo-600 flex items-center justify-center'
                         onClick={deletarTema}
                         >
-                        {isLoading ? <RotatingLines
-                        strokeColor="white"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="24"
-                        visible={true}
+                        {isLoading ? 
+                            <ColorRing
+                            visible={true}
+                            height="80"
+                            width="80"
+                            ariaLabel="color-ring-loading"
+                            wrapperStyle={{}}
+                            wrapperClass="color-ring-wrapper mx-auto"
+                            colors={['#f20089', '#e500a4', '#db00b6', '#d100d1', '#bc00dd']}
                     /> :
                         <span>Sim</span>
                     }

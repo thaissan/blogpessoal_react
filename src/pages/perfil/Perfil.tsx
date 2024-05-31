@@ -26,7 +26,7 @@ function Perfil() {
                 src="https://imgur.com/OuqDfUe.jpg" alt="Capa do Perfil" />
 
             <img 
-                className='rounded-full w-56 mx-auto mt-[-8rem] border-8 border-white relative z-10' 
+                className='rounded-full w-56 h-56 mx-auto mt-[-8rem] border-8 border-white relative z-10' 
                 src={usuario.foto} alt={`Foto de perfil de ${usuario.nome}`} />
 
             <div 

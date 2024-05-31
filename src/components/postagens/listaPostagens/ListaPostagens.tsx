@@ -55,15 +55,7 @@ function ListaPostagens() {
           wrapperClass="color-ring-wrapper mx-auto"
           colors={['#f20089', '#e500a4', '#db00b6', '#d100d1', '#bc00dd']}
           />
-        // <DNA
-        //   visible={true}
-        //   height="200"
-        //   width="200"
-        //   ariaLabel="dna-loading"
-        //   wrapperStyle={{}}
-        //   wrapperClass="dna-wrapper mx-auto"
-        // />
-      )}
+           )}
       <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
         {postagens.map((postagem) => (
           <CardPostagem key={postagem.id} post={postagem} />

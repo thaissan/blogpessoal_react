@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useContext, useEffect, useState } from "react";
-import { DNA } from "react-loader-spinner";
+import { ColorRing } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Tema from "../../../models/Tema";
@@ -47,13 +47,14 @@ function ListaTemas() {
         <>
 
             {temas.length === 0 && (
-                <DNA
-                    visible={true}
-                    height="200"
-                    width="200"
-                    ariaLabel="dna-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="dna-wrapper mx-auto"
+                <ColorRing
+                visible={true}
+                height="80"
+                width="80"
+                ariaLabel="color-ring-loading"
+                wrapperStyle={{}}
+                wrapperClass="color-ring-wrapper mx-auto"
+                colors={['#f20089', '#e500a4', '#db00b6', '#d100d1', '#bc00dd']}
                 />
             )}
             
